@@ -3,31 +3,31 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --primary-color: #ffb80c;
+  --secondary-color: #7a7a7a;
+  --black-color: #000000;
+  --white-color: #ffffff;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+.top-game-path {
+  clip-path: polygon(80% 85%, 83% 0, 100% 0, 100% 100%, 0 100%, 0 85%);
+}
+.small-game-path {
+  clip-path: polygon(67% 85%, 70% 0, 100% 0, 100% 100%, 0 100%, 0 85%);
+}
+@media (max-width: 768px) {
+  .top-game-path {
+    clip-path: polygon(80% 85%, 83% 0, 100% 0, 100% 100%, 0 100%, 0 85%);
+  }
+  .small-game-path {
+    clip-path: polygon(80% 85%, 83% 0, 100% 0, 100% 100%, 0 100%, 0 85%);
   }
 }
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+@media (max-width: 480px) {
+  .top-game-path {
+    clip-path: polygon(70% 75%, 73% 0, 100% 0, 100% 100%, 0 100%, 0 75%);
+  }
+  .small-game-path {
+    clip-path: polygon(70% 75%, 73% 0, 100% 0, 100% 100%, 0 100%, 0 75%);
   }
 }
