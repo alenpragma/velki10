@@ -2,6 +2,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/shared/Navbar";
 import Footer from "@/components/shared/Footer";
+import FooterNab from "@/components/shared/FooterNab";
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -21,12 +22,13 @@ export default function RootLayout({ children }) {
           sizes="any"
         />
       </head>
-      <body className="bg-[#EEEEEE]">
+      <body className="bg-[#EEEEEE] relative">
         <Navbar />
         <div className="">
           {children}
         </div>
         <Footer />
+       <FooterNab />
       </body>
     </html>
   );

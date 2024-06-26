@@ -12,7 +12,7 @@ const navItem = [
 
 const Footer = () => {
   return (
-    <div className="w-full border-t border-secondary pt-8">
+    <div className="w-full border-t border-secondary pt-8 mb-24">
       <Container>
         <div className="flex flex-wrap item-center justify-center gap-2 text-secondary">
           {navItem.map((item, i) => (
