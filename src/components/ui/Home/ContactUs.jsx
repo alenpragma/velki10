@@ -7,9 +7,9 @@ import { FaFacebook } from "react-icons/fa";
 
 const ContactUs = () => {
   return (
-    <div className="w-full py-20">
+    <div className="w-full py-14">
       <Container>
-        <div className="md:w-7/12 w-full mx-auto ">
+        <div className="md:w-8/12 w-full mx-auto ">
           <div>
             <div className="grid grid-cols-12 gap-3">
               <button className="col-span-6  w-full bg-[#ffffff] py-3 rounded border border-slate-400 text-secondary flex justify-center items-center gap-2">
@@ -52,7 +52,7 @@ const ContactUs = () => {
               </p>
             </div>
           </div>
-          <div className="w-8/12 mx-auto mt-10">
+          <div className="w-8/12 mx-auto mt-5">
             <p className="text-secondary text-center text-[14px]">
               Our website works best in the newest and last prior version of
               these browsers: Google Chrome. Firefox

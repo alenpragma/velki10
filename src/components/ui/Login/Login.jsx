@@ -5,6 +5,7 @@ import { IoEyeOffOutline } from "react-icons/io5";
 import { IoEyeOutline } from "react-icons/io5";
 import { useState } from "react";
 import Container from "@/components/shared/Container";
+import Link from "next/link";
 
 const Login = ({ isLoginShow, handleLoginToggle }) => {
   const {
@@ -30,26 +31,33 @@ const Login = ({ isLoginShow, handleLoginToggle }) => {
       ></div>
 
       <div
-        className={`md:w-[500px] w-full h-[300px]  mx-auto right-0 left-0 top-0 bottom-0 my-auto bg-green-500 fixed rounded ${
+        className={`md:w-[500px] w-full h-[400px]  mx-auto right-0 left-0 top-0 bottom-0 my-auto fixed rounded ${
           isLoginShow
             ? "opacity-100 z-10 duration-500"
             : "opacity-0 -z-10  duration-500"
         }`}
       >
-        <div className=" p-5 w-full h-full mx-auto bg-secondary rounded ">
-          <div className="flex justify-center items-center ">
-            <h3 className="font-semibold text-2xl text-white">Login</h3>
+        <div className="w-full h-full mx-auto bg-white rounded ">
+          <div className="p-3 bg-primary text-white font-semibold text-[20px] rounded">
+            <h3>Wellcome to Velki10</h3>
           </div>
-          <form onSubmit={handleSubmit(onSubmit)} className="space-y-5 p-3 ">
-            <input
-              type="text"
-              className="w-full  px-5 py-2  rounded border border-slate-300  focus:outline focus:outline-slate-400"
-              placeholder="username"
-              id="username"
-              {...register("username", { required: true })}
-            />
+          <form
+            onSubmit={handleSubmit(onSubmit)}
+            className="space-y-5 px-8 py-5 "
+          >
+            <div>
+              <label htmlFor="username">Username</label>
+              <input
+                type="text"
+                className="w-full px-5 py-2  rounded border border-slate-300  focus:outline focus:outline-slate-400"
+                placeholder="username"
+                id="username"
+                {...register("username", { required: true })}
+              />
+            </div>
 
             <div className="relative z-10">
+              <label htmlFor="password">Password</label>
               <input
                 type="password"
                 className="w-full  px-5 py-2  rounded border border-slate-300  focus:outline focus:outline-slate-400"
@@ -57,13 +65,27 @@ const Login = ({ isLoginShow, handleLoginToggle }) => {
                 id="password"
                 {...register("password", { required: true })}
               />
+              <div className="text-end mt-1">
+                <Link
+                  href="/"
+                  className="border-b underline hover:text-slate-500"
+                >
+                  Forgot Password?
+                </Link>
+              </div>
             </div>
             <button
               type="submit"
-              className="w-full py-3 bg-blue-700 rounded-md text-[#fff] font-bold"
+              className="w-full py-3 bg-gradient-to-r from-[#ffb60cc0] to-[#ffb80c] rounded-md text-[#fff] font-bold"
             >
-              Login
+              Login Now
             </button>
+            <p>
+              Do not have an Account?{" "}
+              <Link href="/" className="underline hover:text-slate-500">
+                Sign Up Now
+              </Link>
+            </p>
           </form>
         </div>{" "}
       </div>
