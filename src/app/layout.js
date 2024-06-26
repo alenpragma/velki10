@@ -22,13 +22,13 @@ export default function RootLayout({ children }) {
           sizes="any"
         />
       </head>
-      <body className="bg-[#EEEEEE] relative">
+      <body className="bg-[#EEEEEE]">
         <Navbar />
         <div className="">
           {children}
         </div>
         <Footer />
-       <FooterNab />
+        <FooterNab />
       </body>
     </html>
   );
