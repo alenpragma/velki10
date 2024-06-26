@@ -10,24 +10,41 @@
 }
 
 .top-game-path {
-  clip-path: polygon(80% 85%, 83% 0, 100% 0, 100% 100%, 0 100%, 0 85%);
+  clip-path: polygon(82% 85%, 84% 0, 100% 0, 100% 100%, 0 100%, 0 85%);
+}
+.medium-game-path {
+  clip-path: polygon(73% 85%, 75% 0, 100% 0, 100% 100%, 0 100%, 0 85%);
 }
 .small-game-path {
   clip-path: polygon(67% 85%, 70% 0, 100% 0, 100% 100%, 0 100%, 0 85%);
 }
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
   .top-game-path {
-    clip-path: polygon(80% 85%, 83% 0, 100% 0, 100% 100%, 0 100%, 0 85%);
+    clip-path: polygon(77% 85%, 78% 0, 100% 0, 100% 100%, 0 100%, 0 85%);
+  }
+
+}
+@media (max-width: 1024px) {
+  .top-game-path {
+    clip-path: polygon(77% 85%, 79% 0, 100% 0, 100% 100%, 0 100%, 0 85%);
+  }
+  .medium-game-path {
+    clip-path: polygon(65% 85%, 67% 0, 100% 0, 100% 100%, 0 100%, 0 85%);
   }
   .small-game-path {
-    clip-path: polygon(80% 85%, 83% 0, 100% 0, 100% 100%, 0 100%, 0 85%);
+    clip-path: polygon(55% 85%, 57% 0, 100% 0, 100% 100%, 0 100%, 0 85%);
+  }
+}
+@media (max-width: 768px) {
+  .top-game-path {
+    clip-path: polygon(70% 85%, 72% 0, 100% 0, 100% 100%, 0 100%, 0 85%);
+  }
+  .small-game-path {
+    clip-path: polygon(70% 85%, 72% 0, 100% 0, 100% 100%, 0 100%, 0 85%);
   }
 }
 @media (max-width: 480px) {
   .top-game-path {
-    clip-path: polygon(70% 75%, 73% 0, 100% 0, 100% 100%, 0 100%, 0 75%);
-  }
-  .small-game-path {
-    clip-path: polygon(70% 75%, 73% 0, 100% 0, 100% 100%, 0 100%, 0 75%);
+    clip-path: polygon(60% 75%, 63% 0, 100% 0, 100% 100%, 0 100%, 0 75%);
   }
 }
