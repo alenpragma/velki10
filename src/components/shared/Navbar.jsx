@@ -44,7 +44,7 @@ const Navbar = () => {
               <input
                 type="text"
                 placeholder="Search..."
-                className=" px-5  text-black md:w-[250px] w-[100px] rounded border border-slate-300  focus:outline focus:outline-slate-400"
+                className=" px-5  text-black md:w-[250px] w-[100px] md:block hidden rounded border border-slate-300  focus:outline focus:outline-slate-400"
               />
             </form>
           </div>
@@ -61,7 +61,7 @@ const Navbar = () => {
           </div>
         </div>
         <div className="bg-primary px-5">
-          <nav className="flex items-center">
+          <nav className="flex items-center overflow-x-auto">
             {navItem.map((item, i) => (
               <Link
                 key={i}
@@ -77,6 +77,7 @@ const Navbar = () => {
           </nav>
         </div>
       </div>
+
     </>
   );
 };
