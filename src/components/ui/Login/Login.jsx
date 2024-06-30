@@ -1,28 +1,35 @@
 "use client";
 
 import { useForm } from "react-hook-form";
-import { IoEyeOffOutline } from "react-icons/io5";
-import { IoEyeOutline } from "react-icons/io5";
-import { useState } from "react";
-import Container from "@/components/shared/Container";
 import Link from "next/link";
+import { SetAccessToken } from "@/service/auth.service";
+import { RxCross1 } from "react-icons/rx";
 
 const Login = ({ isLoginShow, handleLoginToggle }) => {
   const {
     register,
     handleSubmit,
     watch,
+    reset,
     formState: { errors },
   } = useForm();
 
+  const name = "remon";
+  const word = "2345";
+
   const onSubmit = async (values) => {
-    console.log(values);
+    const { username, password } = values;
+    if (name === username || word === password) {
+      SetAccessToken(values);
+      reset();
+      handleLoginToggle();
+    } else alert("doesnot match");
   };
 
   return (
     <>
       <div
-        className={`w-full  h-screen bg-[#000000a3]  fixed  ${
+        className={`w-full h-[100%] bg-[#00000053]  fixed top-0  ${
           isLoginShow
             ? "opacity-100 z-10 duration-500"
             : "opacity-0 -z-10 duration-500"
@@ -38,8 +45,13 @@ const Login = ({ isLoginShow, handleLoginToggle }) => {
         }`}
       >
         <div className="w-full h-full mx-auto bg-white rounded ">
-          <div className="p-3 bg-primary text-white font-semibold text-[20px] rounded">
+          <div></div>
+          <div className="p-3 bg-primary text-white font-semibold text-[20px] rounded flex justify-between items-center">
             <h3>Wellcome to Velki10</h3>
+            <RxCross1
+              onClick={handleLoginToggle}
+              className="cursor-pointer hover:text-slate-700 duration-300"
+            />
           </div>
           <form
             onSubmit={handleSubmit(onSubmit)}
@@ -52,7 +64,7 @@ const Login = ({ isLoginShow, handleLoginToggle }) => {
                 className="w-full px-5 py-2  rounded border border-slate-300  focus:outline focus:outline-slate-400"
                 placeholder="username"
                 id="username"
-                {...register("username", { required: true })}
+                {...register("username", { required: "This is required." })}
               />
             </div>
 
